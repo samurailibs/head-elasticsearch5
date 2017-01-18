@@ -20,15 +20,17 @@ import org.elasticsearch.rest.RestStatus;
 
 public abstract class ResourceRestAction extends BaseRestHandler {
 
-    protected String urlPath;
-    protected String resourcePath;
-    protected byte[] resource;
-    protected String mimeType;
+    protected final String urlPath;
+    protected final String resourcePath;
+    protected final byte[] resource;
+    protected final String mimeType;
 
     public ResourceRestAction(final Settings settings, final Client client, final RestController controller,
         final String urlPath, final String resourcePath, final String mimeType) {
 
         super(settings);
+        this.urlPath = urlPath;
+        this.resourcePath = resourcePath;
         this.resource = getResouce(resourcePath, this.getClass());
         this.mimeType = mimeType;
 
