@@ -18,7 +18,7 @@ $ $ES_HOME/bin/elasticsearch-plugin install jp.dodododo:head-elasticsearch5:5.1.
 ```
 
 ### Settings
-Would you read a [document of elasticsearch-head](https://github.com/mobz/elasticsearch-head) ?
+Would you read a [document of elasticsearch-head](http://mobz.github.io/elasticsearch-head/) ?
 
 ### Running
 

@@ -23,6 +23,24 @@
 		<dependency.locations.enabled>false</dependency.locations.enabled>
 	</properties>
 
+	<description>elasticsearch-head plugin run without standalone server for Elasticsearch 5.x.</description>
+	<url>https://github.com/samurailibs/head-elasticsearch5/</url>
+
+  <developers>
+    <developer>
+      <id>satoshi-kimura</id>
+      <name>Satoshi Kimura</name>
+      <email>satoshi.kimura@gmail.com</email>
+      <url>http://dodododo.jp/</url>
+      <roles>
+        <role>lead</role>
+        <role>architect</role>
+        <role>developer</role>
+      </roles>
+      <timezone>-9</timezone>
+    </developer>
+  </developers>
+
 	<licenses>
     <license>
       <name>The Apache Software License, Version 2.0</name>
@@ -149,6 +167,51 @@
           <configuration>
             <updateReleaseInfo>true</updateReleaseInfo>
           </configuration>
+        </plugin>
+        <plugin>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <configuration>
+            <use>false</use>
+            <quiet>true</quiet>
+            <failOnError>false</failOnError>
+            <source>1.8</source>
+            <encoding>UTF-8</encoding>
+            <docencoding>UTF-8</docencoding>
+            <charset>UTF-8</charset>
+            <locale>en_US</locale>
+            <links>
+              <link>http://docs.oracle.com/javase/8/docs/api/</link>
+              <link>http://java.sun.com/javase/7/docs/api/</link>
+              <link>http://java.sun.com/javase/6/docs/api/</link>
+              <link>http://java.sun.com/javaee/5/docs/api/</link>
+              <link>http://aopalliance.sourceforge.net/doc/</link>
+            </links>
+            <!--
+            <locale>en_US</locale>
+            <links>
+              <link>http://docs.oracle.com/javase/8/docs/api/</link>
+              <link>http://java.sun.com/javase/7/docs/api/</link>
+              <link>http://java.sun.com/javase/6/docs/api/</link>
+              <link>http://java.sun.com/javaee/5/docs/api/</link>
+              <link>http://aopalliance.sourceforge.net/doc/</link>
+            </links>
+            <locale>ja_JP</locale>
+            <links>
+              <link>http://java.sun.com/javase/ja/6/docs/ja/api/</link>
+              <link>http://java.sun.com/j2ee/1.4/docs/api/</link>
+              <link>http://aopalliance.sourceforge.net/doc/</link>
+            </links>
+            -->
+          </configuration>
+          <executions>
+            <execution>
+              <id>javadoc-jar</id>
+              <phase>package</phase>
+              <goals>
+                <goal>jar</goal>
+              </goals>
+            </execution>
+          </executions>
         </plugin>
       </plugins>
     </pluginManagement>
